@@ -41,6 +41,37 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #a01a20; /* Darker XSEED Red on hover */
         }
+
+        /* Styles for the hover popup */
+        .card-popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.98); /* Slightly transparent white */
+            border-radius: 0.75rem; /* Match card border-radius */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Stronger shadow */
+            opacity: 0; /* Initially hidden */
+            pointer-events: none; /* Allows clicks to pass through when hidden */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 1.5rem; /* Padding inside the popup */
+            transform: translateY(10px); /* Slight initial offset */
+            z-index: 10; /* Ensure it's above other cards */
+            border: 2px solid #bc2026; /* XSEED primary color border */
+            overflow-y: auto; /* Enable scrolling for long content */
+            max-height: 100%; /* Ensure popup doesn't overflow card */
+        }
+
+        .feature-card:hover .card-popup {
+            opacity: 1; /* Show on hover */
+            pointer-events: auto; /* Enable interaction */
+            transform: translateY(0); /* Move to original position */
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -99,48 +130,83 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Feature Card: Video Upload -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Enable teachers to upload videos and make them directly clickable within news feeds, a highly requested feature from schools."
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Video Upload & Clickable Link</h3>
-                            <p class="text-gray-600 text-sm mb-4">Enable teachers to upload videos and make them directly clickable within news feeds, a highly requested feature from schools.</p>
+                            <p class="text-gray-600 text-sm mb-4">Enable teachers to upload videos and make them directly clickable within news feeds, a highly requested feature.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Video Upload & Clickable Link</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Enable teachers to upload videos and make them directly clickable within news feeds, a highly requested feature from schools.</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Feature Card: Computer Science Audio Generation -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="In the SuperTeacher App, every lesson plan and daily plan has audio for teacher prep mode and projector mode, except for computer science. Frontend is already capable of playing the audio, but during the publish backend can’t generate audio for new templates (classroom and lab)"
+                            data-prerequisites="Need confirmation about how the slide audio should be generated, and how the audio changes between the old and new layouts">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Computer Science Audio Generation</h3>
                             <p class="text-gray-600 text-sm mb-4">Extend audio generation capabilities to Computer Science lesson plans and daily plans for consistency across all subjects.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 10 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Computer Science Audio Generation</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> In the SuperTeacher App, every lesson plan and daily plan has audio for teacher prep mode and projector mode, except for computer science. Frontend is already capable of playing the audio, but during the publish backend can’t generate audio for new templates (classroom and lab)</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Need confirmation about how the slide audio should be generated, and how the audio changes between the old and new layouts</p>
+                            </div>
                         </div>
                         <!-- Feature Card: School Switch Feature -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="In case the owner is part of a group of schools, our app currently lets them view only the content of the first school that was linked to their account; they cannot see other schools’ content. We need to enable a switch feature in the UI and make necessary backend changes"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">School Switch Feature</h3>
                             <p class="text-gray-600 text-sm mb-4">Implement a UI and backend solution allowing owners of multi-school groups to easily switch between and access content.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 7 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">School Switch Feature</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> In case the owner is part of a group of schools, our app currently lets them view only the content of the first school that was linked to their account; they cannot see other schools’ content. We need to enable a switch feature in the UI and make necessary backend changes</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Feature Card: Recent Lesson Plans -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Currently, if you open a lesson plan in the block list screen and close it, and try to open it back again, it will not store the history, so you have to go through the same steps again"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Recent Lesson Plans</h3>
                             <p class="text-gray-600 text-sm mb-4">Enhance the lesson plan experience by storing history, allowing users to quickly re-access recently viewed plans.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Recent Lesson Plans</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Currently, if you open a lesson plan in the block list screen and close it, and try to open it back again, it will not store the history, so you have to go through the same steps again</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Feature Card: Year Switch Feature -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Currently, there is no way to see last year’s data in our app. This could be useful for the results page in the app so that people can check and compare with the past year's data"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Year Switch Feature</h3>
                             <p class="text-gray-600 text-sm mb-4">Introduce the ability to view and compare data from previous academic years, particularly useful for the results page.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
+                            </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Year Switch Feature</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Currently, there is no way to see last year’s data in our app. This could be useful for the results page in the app so that people can check and compare with the past year's data</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
                             </div>
                         </div>
                     </div>
@@ -153,48 +219,83 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- New Product Card: SuperTeacher TV App -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Most schools have low-powered TVs, and because of this, the SuperTeacher app is not working well. Also, we are sharing TV APKs via Google Drive instead of the Play Store. Because of this, people are using the wrong APKs also not updating the apps to the latest versions, which is again hard and involves someone to monitor the Google Drive link. Instead, we can create a lightweight SuperTeacher app for TV that has only Standard Subject page, block list page, and the projector mode (No Teacher prep mode). We can host this app in the Play Store itself so that users can directly download from the Play Store and update via the Play Store itself"
+                            data-prerequisites="Need design support for making the UI TV-friendly">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">SuperTeacher TV App</h3>
-                            <p class="text-gray-600 text-sm mb-4">Develop a lightweight, optimized SuperTeacher app specifically for low-powered school TVs, distributed via Play Store.</p>
+                            <p class="text-gray-600 text-sm mb-4">Develop a lightweight, optimized app for low-powered school TVs, distributed via Play Store.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 2 Months</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">SuperTeacher TV App</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Most schools have low-powered TVs, and because of this, the SuperTeacher app is not working well. Also, we are sharing TV APKs via Google Drive instead of the Play Store. Because of this, people are using the wrong APKs also not updating the apps to the latest versions, which is again hard and involves someone to monitor the Google Drive link. Instead, we can create a lightweight SuperTeacher app for TV that has only Standard Subject page, block list page, and the projector mode (No Teacher prep mode). We can host this app in the Play Store itself so that users can directly download from the Play Store and update via the Play Store itself</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Need design support for making the UI TV-friendly</p>
+                            </div>
                         </div>
                         <!-- New Product Card: Push Notifications -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Currently, there is minimal to no notification going out the the users. We can bring in this feature and notify users, say for example To academic admins: A question has been asked in this lesson in this block To Parents: A news feed has been added or homework has been posted by the teacher To Teachers: If the teacher has not posted a Homework for a while may be we can notify them to post homeworks. This could increase the app engagement"
+                            data-prerequisites="Need to get confirmation on what all types of notifications can be given to the users">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Push Notifications</h3>
                             <p class="text-gray-600 text-sm mb-4">Implement a comprehensive push notification system to enhance user engagement for admins, parents, and teachers.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 15 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Push Notifications</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Currently, there is minimal to no notification going out the the users. We can bring in this feature and notify users, say for example To academic admins: A question has been asked in this lesson in this block To Parents: A news feed has been added or homework has been posted by the teacher To Teachers: If the teacher has not posted a Homework for a while may be we can notify them to post homeworks. This could increase the app engagement</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Need to get confirmation on what all types of notifications can be given to the users</p>
+                            </div>
                         </div>
                         <!-- New Product Card: QR for Projector Mode -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="In the old app, we used to have this feature, where scanning the QR on the TV screen via the SuperTeacher mobile app would open the projector mode directly on the TV without the need to log in. This was a handy feature as teachers need not log in to the TV manually, also a popup appears after 45 mins, which on clicking will log out of the account."
+                            data-prerequisites="SuperTeacher TV app should be completed first also design is required">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">QR for Projector Mode</h3>
                             <p class="text-gray-600 text-sm mb-4">Reintroduce the convenient QR scan feature for instant projector mode access on TV, avoiding manual logins.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 20 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">QR for Projector Mode</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> In the old app, we used to have this feature, where scanning the QR on the TV screen via the SuperTeacher mobile app would open the projector mode directly on the TV without the need to log in. This was a handy feature as teachers need not log in to the TV manually, also a popup appears after 45 mins, which on clicking will log out of the account.</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> SuperTeacher TV app should be completed first also design is required</p>
+                            </div>
                         </div>
                         <!-- New Product Card: Admins to View Teacher Usage -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Currently, the ECs are sharing the teacher usage data with schools from the CSV files shared by me. We can make this a feature and the admin can view the total time spent by a teacher on the app withing SuperTeacher app itself"
+                            data-prerequisites="can get design confirmation from garima regarding the placement of this table">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Admins to View Teacher Usage</h3>
                             <p class="text-gray-600 text-sm mb-4">Develop an in-app feature enabling academic administrators to view total time spent by teachers on the app.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 20 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Admins to View Teacher Usage</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Currently, the ECs are sharing the teacher usage data with schools from the CSV files shared by me. We can make this a feature and the admin can view the total time spent by a teacher on the app withing SuperTeacher app itself</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> can get design confirmation from garima regarding the placement of this table</p>
+                            </div>
                         </div>
                         <!-- New Product Card: SuperTeacher Data Usage App -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="With the data we are tracking and sharing in the form of Excel file with Gagan can be made into an app itself. Geography owners can see how their schools are performing, whether the engagement rates are increasing or decreasing. They can make targeted decisions to visit schools in case the usage drops. We can add an alerting system too, so that if a school’s usage is trending downward, we can alert the ECs to visit the school"
+                            data-prerequisites="Need to confirm the design also the features that may be required">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">SuperTeacher Data Usage App</h3>
                             <p class="text-gray-600 text-sm mb-4">Transform current Excel-based data tracking into a dedicated app for monitoring school performance and engagement trends.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 2 Months</span>
+                            </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">SuperTeacher Data Usage App</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> With the data we are tracking and sharing in the form of Excel file with Gagan can be made into an app itself. Geography owners can see how their schools are performing, whether the engagement rates are increasing or decreasing. They can make targeted decisions to visit schools in case the usage drops. We can add an alerting system too, so that if a school’s usage is trending downward, we can alert the ECs to visit the school</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Need to confirm the design also the features that may be required</p>
                             </div>
                         </div>
                     </div>
@@ -207,48 +308,83 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Housekeeping Card: OpenTelemetry & Tracing -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Last year, we moved from ELK to Grafana because of pricing concerns. This removed our ability to trace an issue when it happens, increasing the complexity of debuggin. This has resulted in us marking some issues as “Not Reproducible” and taking more time to figure out what happened"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">OpenTelemetry & Tracing</h3>
                             <p class="text-gray-600 text-sm mb-4">Re-establish robust tracing capabilities to improve debugging efficiency and reduce "Not Reproducible" issues.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 1 Month</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">OpenTelemetry & Tracing</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Last year, we moved from ELK to Grafana because of pricing concerns. This removed our ability to trace an issue when it happens, increasing the complexity of debuggin. This has resulted in us marking some issues as “Not Reproducible” and taking more time to figure out what happened</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Housekeeping Card: Alerting -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Even for major issues like some backend failures, we are relying on the field team to create bugs. Instead, we can proactively message the team if something goes wrong."
+                            data-prerequisites="Open-telementry should be completed before this task">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Alerting</h3>
                             <p class="text-gray-600 text-sm mb-4">Implement proactive alerting for major backend failures and system issues, reducing reliance on manual bug reporting.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 15 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Alerting</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Even for major issues like some backend failures, we are relying on the field team to create bugs. Instead, we can proactively message the team if something goes wrong.</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Open-telementry should be completed before this task</p>
+                            </div>
                         </div>
                         <!-- Housekeeping Card: Firebase Crashlytics Fixes -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="We have Crashlytics integrated within the app, but it is not working well; it is assuming every error, even user-driven ones, as a crash"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Firebase Crashlytics Fixes</h3>
                             <p class="text-gray-600 text-sm mb-4">Rectify issues with Firebase Crashlytics to accurately report crashes and distinguish them from user-driven errors.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 7 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Firebase Crashlytics Fixes</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> We have Crashlytics integrated within the app, but it is not working well; it is assuming every error, even user-driven ones, as a crash</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Housekeeping Card: Testing Automation POC -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="We need to attempt to automate testing in UI using some AI tools"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Testing Automation POC</h3>
                             <p class="text-gray-600 text-sm mb-4">Conduct a Proof of Concept to explore and evaluate AI tools for automating UI testing.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> 5-7 Days</span>
                             </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Testing Automation POC</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> We need to attempt to automate testing in UI using some AI tools</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- Housekeeping Card: Testing Automation -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Integrate automation testing in the app so that we will be well aware of what could break"
+                            data-prerequisites="Testing automation POC to be completed">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Testing Automation</h3>
                             <p class="text-gray-600 text-sm mb-4">Integrate comprehensive automation testing into the app to proactively identify potential breaking changes.</p>
                             <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
                                 <span><strong class="text-xseed-primary">Devs:</strong> TBD</span>
                                 <span><strong class="text-xseed-primary">ETA:</strong> TBD</span>
+                            </div>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Testing Automation</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Integrate automation testing in the app so that we will be well aware of what could break</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> Testing automation POC to be completed</p>
                             </div>
                         </div>
                     </div>
@@ -262,19 +398,40 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- AI Card: Lesson Plan Question Generation -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="We can integrate question generation into the CES by adding a generate question option. The AI will automatically generate questions based on the lesson plan content. authors can choose which questions they want and add them to the question list"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Lesson Plan Question Generation</h3>
-                            <p class="text-gray-600 text-sm mb-4">Integrate AI into the Content Editing System (CES) to automatically generate questions based on lesson plan content.</p>
+                            <p class="text-gray-600 text-sm mb-4">Integrate AI to automatically generate questions based on lesson plan content.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Lesson Plan Question Generation</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> We can integrate question generation into the CES by adding a generate question option. The AI will automatically generate questions based on the lesson plan content. authors can choose which questions they want and add them to the question list</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- AI Card: Q&A Section AI Integration -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="We can integrate a chatbot in the Q&A section of the SuperTeacher app. Users will get instant answers"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Q&A Section AI Integration</h3>
-                            <p class="text-gray-600 text-sm mb-4">Implement an AI-powered chatbot within the SuperTeacher app's Q&A section to provide instant answers to user queries.</p>
+                            <p class="text-gray-600 text-sm mb-4">Implement an AI-powered chatbot within the Q&A section for instant answers.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Q&A Section AI Integration</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> We can integrate a chatbot in the Q&A section of the SuperTeacher app. Users will get instant answers</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- AI Card: Practice Tests in Parent App -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Once a teacher marks a lesson plan as completed, we can use AI to generate questions from the lesson plan, and share them as a practice assessment in the parent app. Students can take these assessments and get instant feedback on where they stand on the lesson. This information can even be used to train the digital twin"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Practice Tests in Parent App</h3>
-                            <p class="text-gray-600 text-sm mb-4">Leverage AI to generate practice assessments from completed lesson plans, sharing them with the parent app for student feedback.</p>
+                            <p class="text-gray-600 text-sm mb-4">Leverage AI to generate practice assessments from completed lesson plans for students.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Practice Tests in Parent App</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Once a teacher marks a lesson plan as completed, we can use AI to generate questions from the lesson plan, and share them as a practice assessment in the parent app. Students can take these assessments and get instant feedback on where they stand on the lesson. This information can even be used to train the digital twin</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -287,19 +444,40 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- CI Card: DB Resizing -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Make the rows and columns in DBs to use the correct data type for optimized storage and data clarity"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">DB Resizing</h3>
                             <p class="text-gray-600 text-sm mb-4">Optimize database storage and clarity by ensuring rows and columns use appropriate data types for efficiency.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">DB Resizing</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Make the rows and columns in DBs to use the correct data type for optimized storage and data clarity</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- CI Card: Cleanup of Unused Repositories -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="We have more than 300 repositories. We need to go through them, find the unused ones, and mark them as archived"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Cleanup of Unused Repositories</h3>
                             <p class="text-gray-600 text-sm mb-4">Review and archive unused repositories from our current pool of over 300 to improve code management and reduce clutter.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Cleanup of Unused Repositories</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> We have more than 300 repositories. We need to go through them, find the unused ones, and mark them as archived</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                         <!-- CI Card: Framework Updations -->
-                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                        <div class="feature-card relative bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300"
+                            data-full-description="Making sure all the relevant frameworks and technologies we use are up-to-date and running the latest stable version"
+                            data-prerequisites="NA">
                             <h3 class="text-xl font-semibold mb-2 text-gray-900">Framework Updations</h3>
                             <p class="text-gray-600 text-sm mb-4">Regularly update all relevant frameworks and technologies to their latest stable versions to ensure security, performance, and new features.</p>
+                            <div class="card-popup">
+                                <h4 class="text-lg font-bold text-xseed-primary mb-2">Framework Updations</h4>
+                                <p class="text-gray-800 text-sm mb-2"><strong>Description:</strong> Making sure all the relevant frameworks and technologies we use are up-to-date and running the latest stable version</p>
+                                <p class="text-gray-700 text-xs"><strong>Prerequisites:</strong> NA</p>
+                            </div>
                         </div>
                     </div>
                 </section>

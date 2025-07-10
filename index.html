@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTeacher 9-Month Product Roadmap</title>
+    <!-- Tailwind CSS CDN for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for body and XSEED primary color definition */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background for a clean look */
+            color: #333; /* Dark grey text for readability */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        /* Define the XSEED primary color (0xffbc2026) as a custom Tailwind color variable */
+        .xseed-primary {
+            background-color: #bc2026; /* XSEED Red */
+        }
+        .text-xseed-primary {
+            color: #bc2026; /* XSEED Red for text */
+        }
+        .border-xseed-primary {
+            border-color: #bc2026; /* XSEED Red for borders */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bc2026; /* XSEED Red */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a01a20; /* Darker XSEED Red on hover */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4 px-6 sticky top-0 z-50 rounded-b-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-2xl font-bold text-xseed-primary">SuperTeacher</a>
+            <!-- Navigation Links (Hidden on small screens, shown on medium and larger) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#summary" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">Summary</a>
+                <a href="#features" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">Features</a>
+                <a href="#new-products" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">New Products</a>
+                <a href="#housekeeping" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">Housekeeping</a>
+                <a href="#ai-innovation" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">AI & Innovation</a>
+                <a href="#priority" class="text-gray-700 hover:text-xseed-primary font-medium transition-colors duration-300">Priority</a>
+            </div>
+            <!-- Mobile Menu Button (for future implementation if needed) -->
+            <button class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow p-4 sm:p-6 md:p-8 lg:p-10">
+        <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-xl p-6 sm:p-8 md:p-10 lg:p-12">
+            <!-- Hero Section / Main Header -->
+            <header class="text-center mb-12 py-8 bg-gradient-to-r from-white to-gray-50 rounded-lg shadow-inner">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-xseed-primary mb-4 leading-tight">
+                    SuperTeacher's Vision: <br class="hidden sm:inline">The Next 9 Months
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+                    A Strategic Product Roadmap for Enhanced Learning & Growth
+                </p>
+                <div class="w-32 h-1.5 xseed-primary mx-auto mt-4 rounded-full"></div>
+            </header>
+
+            <!-- Executive Summary Section -->
+            <section id="summary" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-inner border-l-4 border-xseed-primary">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <span class="text-xseed-primary text-3xl mr-3">💡</span> Executive Summary
+                </h2>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                    This document outlines SuperTeacher's ambitious 9-month product roadmap, designed to enhance user experience, introduce innovative new products, bolster operational efficiency, and integrate cutting-edge AI capabilities. Our focus remains on delivering high-value features that address immediate user needs and strategic initiatives that position SuperTeacher for long-term growth and market leadership. This plan prioritizes key developments based on user demand, strategic importance, and technical prerequisites, ensuring a streamlined and impactful execution.
+                </p>
+            </section>
+
+            <!-- Roadmap Categories -->
+            <div class="space-y-16">
+                <!-- Feature Enhancements Section -->
+                <section id="features">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">🚀</span> Feature Enhancements
+                        <span class="ml-3 text-base text-gray-500 hidden sm:inline">(Addressing Immediate User Needs)</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature Card: Video Upload -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Video Upload & Clickable Link</h3>
+                            <p class="text-gray-600 text-sm mb-4">Enable teachers to upload videos and make them directly clickable within news feeds, a highly requested feature from schools.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
+                            </div>
+                        </div>
+                        <!-- Feature Card: Computer Science Audio Generation -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Computer Science Audio Generation</h3>
+                            <p class="text-gray-600 text-sm mb-4">Extend audio generation capabilities to Computer Science lesson plans and daily plans for consistency across all subjects.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 10 Days</span>
+                            </div>
+                        </div>
+                        <!-- Feature Card: School Switch Feature -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">School Switch Feature</h3>
+                            <p class="text-gray-600 text-sm mb-4">Implement a UI and backend solution allowing owners of multi-school groups to easily switch between and access content.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 7 Days</span>
+                            </div>
+                        </div>
+                        <!-- Feature Card: Recent Lesson Plans -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Recent Lesson Plans</h3>
+                            <p class="text-gray-600 text-sm mb-4">Enhance the lesson plan experience by storing history, allowing users to quickly re-access recently viewed plans.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
+                            </div>
+                        </div>
+                        <!-- Feature Card: Year Switch Feature -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Year Switch Feature</h3>
+                            <p class="text-gray-600 text-sm mb-4">Introduce the ability to view and compare data from previous academic years, particularly useful for the results page.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 5 Days</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- New Products & Strategic Implementations Section -->
+                <section id="new-products">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">✨</span> New Products & Strategic Implementations
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- New Product Card: SuperTeacher TV App -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">SuperTeacher TV App</h3>
+                            <p class="text-gray-600 text-sm mb-4">Develop a lightweight, optimized SuperTeacher app specifically for low-powered school TVs, distributed via Play Store.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 2 Months</span>
+                            </div>
+                        </div>
+                        <!-- New Product Card: Push Notifications -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Push Notifications</h3>
+                            <p class="text-gray-600 text-sm mb-4">Implement a comprehensive push notification system to enhance user engagement for admins, parents, and teachers.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 15 Days</span>
+                            </div>
+                        </div>
+                        <!-- New Product Card: QR for Projector Mode -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">QR for Projector Mode</h3>
+                            <p class="text-gray-600 text-sm mb-4">Reintroduce the convenient QR scan feature for instant projector mode access on TV, avoiding manual logins.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 20 Days</span>
+                            </div>
+                        </div>
+                        <!-- New Product Card: Admins to View Teacher Usage -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Admins to View Teacher Usage</h3>
+                            <p class="text-gray-600 text-sm mb-4">Develop an in-app feature enabling academic administrators to view total time spent by teachers on the app.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 20 Days</span>
+                            </div>
+                        </div>
+                        <!-- New Product Card: SuperTeacher Data Usage App -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">SuperTeacher Data Usage App</h3>
+                            <p class="text-gray-600 text-sm mb-4">Transform current Excel-based data tracking into a dedicated app for monitoring school performance and engagement trends.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 2</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 2 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Operational Excellence & Housekeeping Section -->
+                <section id="housekeeping">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">⚙️</span> Operational Excellence & Housekeeping
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Housekeeping Card: OpenTelemetry & Tracing -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">OpenTelemetry & Tracing</h3>
+                            <p class="text-gray-600 text-sm mb-4">Re-establish robust tracing capabilities to improve debugging efficiency and reduce "Not Reproducible" issues.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 1 Month</span>
+                            </div>
+                        </div>
+                        <!-- Housekeeping Card: Alerting -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Alerting</h3>
+                            <p class="text-gray-600 text-sm mb-4">Implement proactive alerting for major backend failures and system issues, reducing reliance on manual bug reporting.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 15 Days</span>
+                            </div>
+                        </div>
+                        <!-- Housekeeping Card: Firebase Crashlytics Fixes -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Firebase Crashlytics Fixes</h3>
+                            <p class="text-gray-600 text-sm mb-4">Rectify issues with Firebase Crashlytics to accurately report crashes and distinguish them from user-driven errors.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 7 Days</span>
+                            </div>
+                        </div>
+                        <!-- Housekeeping Card: Testing Automation POC -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Testing Automation POC</h3>
+                            <p class="text-gray-600 text-sm mb-4">Conduct a Proof of Concept to explore and evaluate AI tools for automating UI testing.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> 1</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> 5-7 Days</span>
+                            </div>
+                        </div>
+                        <!-- Housekeeping Card: Testing Automation -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Testing Automation</h3>
+                            <p class="text-gray-600 text-sm mb-4">Integrate comprehensive automation testing into the app to proactively identify potential breaking changes.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-700 font-medium">
+                                <span><strong class="text-xseed-primary">Devs:</strong> TBD</span>
+                                <span><strong class="text-xseed-primary">ETA:</strong> TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI & Innovation Section -->
+                <section id="ai-innovation">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">🧠</span> AI & Innovation
+                        <span class="ml-3 text-base text-gray-500 hidden sm:inline">(Future-Oriented Capabilities)</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- AI Card: Lesson Plan Question Generation -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Lesson Plan Question Generation</h3>
+                            <p class="text-gray-600 text-sm mb-4">Integrate AI into the Content Editing System (CES) to automatically generate questions based on lesson plan content.</p>
+                        </div>
+                        <!-- AI Card: Q&A Section AI Integration -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Q&A Section AI Integration</h3>
+                            <p class="text-gray-600 text-sm mb-4">Implement an AI-powered chatbot within the SuperTeacher app's Q&A section to provide instant answers to user queries.</p>
+                        </div>
+                        <!-- AI Card: Practice Tests in Parent App -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Practice Tests in Parent App</h3>
+                            <p class="text-gray-600 text-sm mb-4">Leverage AI to generate practice assessments from completed lesson plans, sharing them with the parent app for student feedback.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Continuous Improvement Section -->
+                <section id="continuous-improvement">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">🛠️</span> Continuous Improvement
+                        <span class="ml-3 text-base text-gray-500 hidden sm:inline">(Ongoing "Chip Away" Tasks)</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- CI Card: DB Resizing -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">DB Resizing</h3>
+                            <p class="text-gray-600 text-sm mb-4">Optimize database storage and clarity by ensuring rows and columns use appropriate data types for efficiency.</p>
+                        </div>
+                        <!-- CI Card: Cleanup of Unused Repositories -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Cleanup of Unused Repositories</h3>
+                            <p class="text-gray-600 text-sm mb-4">Review and archive unused repositories from our current pool of over 300 to improve code management and reduce clutter.</p>
+                        </div>
+                        <!-- CI Card: Framework Updations -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-xseed-primary transform hover:scale-105 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Framework Updations</h3>
+                            <p class="text-gray-600 text-sm mb-4">Regularly update all relevant frameworks and technologies to their latest stable versions to ensure security, performance, and new features.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Priority Ranking Table Section -->
+                <section id="priority" class="mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="xseed-primary p-2 rounded-full mr-3 text-white shadow-lg">📊</span> Priority Ranking of Development Initiatives
+                    </h2>
+                    <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-200">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr class="bg-xseed-primary text-white text-left text-sm uppercase tracking-wider">
+                                    <th class="py-3 px-4 rounded-tl-lg">Feature</th>
+                                    <th class="py-3 px-4">Category</th>
+                                    <th class="py-3 px-4">Resources</th>
+                                    <th class="py-3 px-4">ETA</th>
+                                    <th class="py-3 px-4">Summary</th>
+                                    <th class="py-3 px-4 rounded-tr-lg">Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <!-- Priority 1 Items -->
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Computer Science Audio Generation</td>
+                                    <td class="py-3 px-4 text-gray-700">Feature Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">10 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Add audio generation for computer science lessons</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">SuperTeacher TV App</td>
+                                    <td class="py-3 px-4 text-gray-700">Fresh Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">2 months</td>
+                                    <td class="py-3 px-4 text-gray-700">Lightweight TV app with limited core features</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">QR for Projector Mode</td>
+                                    <td class="py-3 px-4 text-gray-700">Fresh Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">20 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Scan QR to open projector mode on TV instantly</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Admins to View Teacher Usage</td>
+                                    <td class="py-3 px-4 text-gray-700">Fresh Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">20 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Admins can see teacher usage data inside the app</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">OpenTelemetry & Tracing</td>
+                                    <td class="py-3 px-4 text-gray-700">Housekeeping</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">1 month</td>
+                                    <td class="py-3 px-4 text-gray-700">Implement distributed tracing and debugging</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Alerting</td>
+                                    <td class="py-3 px-4 text-gray-700">Housekeeping</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">15 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Set up proactive system alerts for issues</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Firebase Crashlytics Fixes</td>
+                                    <td class="py-3 px-4 text-gray-700">Housekeeping</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">7 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Fix incorrect error reporting in Crashlytics</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+                                <tr class="bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Testing Automation POC</td>
+                                    <td class="py-3 px-4 text-gray-700">Housekeeping</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">5-7 days</td>
+                                    <td class="py-3 px-4 text-gray-700">POC for automating UI tests with AI tools</td>
+                                    <td class="py-3 px-4 font-bold text-red-600">1</td>
+                                </tr>
+
+                                <!-- Priority 2 Items -->
+                                <tr class="bg-yellow-50 hover:bg-yellow-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Recent Lesson Plans</td>
+                                    <td class="py-3 px-4 text-gray-700">Feature Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">5 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Retain lesson plan history when reopening</td>
+                                    <td class="py-3 px-4 font-bold text-yellow-700">2</td>
+                                </tr>
+                                <tr class="bg-yellow-50 hover:bg-yellow-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Push Notifications</td>
+                                    <td class="py-3 px-4 text-gray-700">Fresh Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">15 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Send notifications to admins, parents, and teachers</td>
+                                    <td class="py-3 px-4 font-bold text-yellow-700">2</td>
+                                </tr>
+                                <tr class="bg-yellow-50 hover:bg-yellow-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">SuperTeacher Data Usage App</td>
+                                    <td class="py-3 px-4 text-gray-700">Fresh Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">2 months</td>
+                                    <td class="py-3 px-4 text-gray-700">App to monitor school data usage and engagement</td>
+                                    <td class="py-3 px-4 font-bold text-yellow-700">2</td>
+                                </tr>
+
+                                <!-- Priority 3 Items -->
+                                <tr class="bg-green-50 hover:bg-green-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Video Upload and Clickable Link</td>
+                                    <td class="py-3 px-4 text-gray-700">Feature Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">1 dev</td>
+                                    <td class="py-3 px-4 text-gray-700">5 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Enable video uploads and clickable links in news feeds</td>
+                                    <td class="py-3 px-4 font-bold text-green-700">3</td>
+                                </tr>
+                                <tr class="bg-green-50 hover:bg-green-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">School Switch Feature</td>
+                                    <td class="py-3 px-4 text-gray-700">Feature Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">7 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Allow switching between multiple schools in the app</td>
+                                    <td class="py-3 px-4 font-bold text-green-700">3</td>
+                                </tr>
+                                <tr class="bg-green-50 hover:bg-green-100 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Year Switch Feature</td>
+                                    <td class="py-3 px-4 text-gray-700">Feature Implementation</td>
+                                    <td class="py-3 px-4 text-gray-700">2 devs</td>
+                                    <td class="py-3 px-4 text-gray-700">5 days</td>
+                                    <td class="py-3 px-4 text-gray-700">Enable viewing previous year’s data in results</td>
+                                    <td class="py-3 px-4 font-bold text-green-700">3</td>
+                                </tr>
+
+                                <!-- TBD / No Priority Items -->
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Testing Automation</td>
+                                    <td class="py-3 px-4 text-gray-700">Housekeeping</td>
+                                    <td class="py-3 px-4 text-gray-700">TBD</td>
+                                    <td class="py-3 px-4 text-gray-700">TBD</td>
+                                    <td class="py-3 px-4 text-gray-700">Full testing automation after POC validation</td>
+                                    <td class="py-3 px-4 text-gray-700">Based on POC</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Lesson Plan Question Generation</td>
+                                    <td class="py-3 px-4 text-gray-700">AI Implementations</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">Auto-generate questions from lesson plans</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Q&A Section AI Integration</td>
+                                    <td class="py-3 px-4 text-gray-700">AI Implementations</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">AI chatbot for instant Q&A section answers</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Practice Tests in Parent App</td>
+                                    <td class="py-3 px-4 text-gray-700">AI Implementations</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">AI-generated practice tests for parents</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">DB Resizing</td>
+                                    <td class="py-3 px-4 text-gray-700">Chip Away</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">Optimize DB columns for better storage</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Cleanup of Unused Repos</td>
+                                    <td class="py-3 px-4 text-gray-700">Chip Away</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">Archive unused repositories</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                    <td class="py-3 px-4 font-semibold text-gray-900">Framework Updates</td>
+                                    <td class="py-3 px-4 text-gray-700">Chip Away</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                    <td class="py-3 px-4 text-gray-700">Update frameworks and tech stack regularly</td>
+                                    <td class="py-3 px-4 text-gray-700">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 mt-12 rounded-t-lg">
+        <div class="max-w-6xl mx-auto text-center text-sm">
+            <p>&copy; 2025 SuperTeacher. All rights reserved.</p>
+            <p class="mt-2">Product Roadmap presented to Leadership.</p>
+        </div>
+    </footer>
+</body>
+</html>
